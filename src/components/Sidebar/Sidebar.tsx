@@ -25,12 +25,12 @@ function Sidebar({ onFilterCallback }: Props) {
     useManifacturer();
 
   const colors = [
-    { title: "All car colors", value: "all" },
+    { title: "All car colors", value: "All car colors" },
     ...(colorsData ?? []),
   ];
 
   const manifacturers = [
-    { title: "All Manifacturer", value: "all" },
+    { title: "All Manifacturer", value: "All Manifacturer" },
     ...(manifactursData ?? []),
   ];
 
@@ -42,7 +42,11 @@ function Sidebar({ onFilterCallback }: Props) {
   const selectedShort = searchParams.get("sortBy") ?? shortBy[0].value;
 
   const handleSelect = (name: string, value: string) => {
-    if (value === "all" || value === "none") {
+    if (
+      [manifacturers[0].value, colors[0].value, shortBy[0].value].includes(
+        value
+      )
+    ) {
       searchParams.delete(name);
     } else {
       searchParams.set(name, value);

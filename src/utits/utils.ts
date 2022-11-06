@@ -9,6 +9,6 @@ export const addPageToSearchParams = (
   page: string
 ) => {
   const params = Object.fromEntries(searchParams);
-  params.page = page.toString();
+  params.page = page;
   return "?" + new URLSearchParams(params).toString();
 };

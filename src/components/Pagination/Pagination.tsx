@@ -2,7 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 import theme from "../../theme/theme";
-import { addPageToSearchParams, parseSearchParams } from "../../utils";
+import { addPageToSearchParams, parseSearchParams } from "../../utits/utils";
 
 interface Props {
   totalPageCount: number;
@@ -12,27 +12,29 @@ interface Props {
 function Pagination({ totalCarsCount, totalPageCount }: Props) {
   const [searchParams] = useSearchParams();
 
-  const currentPage = parseSearchParams(searchParams).get("page");
+  const currentPage = Number(parseSearchParams(searchParams).get("page") ?? 1);
 
-  const numberOfPages =
-    Math.ceil(totalCarsCount / totalPageCount).toString() ?? "1";
+  const numberOfPages = Math.ceil(totalCarsCount / totalPageCount);
 
   const firstPage = addPageToSearchParams(searchParams, "1").toString();
 
   const previewsPage = addPageToSearchParams(
     searchParams,
-    (Number(currentPage) - 1 ? Number(currentPage) - 1 : 1).toString()
+    (currentPage - 1 ? currentPage - 1 : 1).toString()
   );
 
   const nextPage = addPageToSearchParams(
     searchParams,
-    (Number(currentPage) + 1 <= Number(numberOfPages)
-      ? Number(currentPage) + 1
-      : Number(currentPage)
+    (currentPage + 1 <= numberOfPages
+      ? currentPage + 1
+      : currentPage
     ).toString()
   );
 
-  const lastPage = addPageToSearchParams(searchParams, numberOfPages);
+  const lastPage = addPageToSearchParams(
+    searchParams,
+    numberOfPages.toString()
+  );
 
   return (
     <Box
