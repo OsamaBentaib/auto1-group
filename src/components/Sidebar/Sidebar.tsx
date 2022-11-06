@@ -1,7 +1,6 @@
 import { Typography, Box, Skeleton } from "@mui/material";
 import React, { useEffect } from "react";
 import theme from "../../theme/theme";
-import { grey } from "@mui/material/colors";
 import CustomButton from "../CustomButton/CustomButton";
 import { useSearchParams } from "react-router-dom";
 import FilterMenu from "../FilterMenu/FilterMenu";
@@ -65,7 +64,7 @@ function Sidebar({ onFilterCallback }: Props) {
       sx={{
         padding: theme.spacing(2),
         width: "100%",
-        border: "1px solid" + grey[200],
+        border: "1px solid" + theme.palette.neutral,
       }}
     >
       <Box>

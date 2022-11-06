@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
 import React from "react";
+import theme from "../../theme/theme";
 
 function Footer() {
   return (
@@ -10,7 +10,7 @@ function Footer() {
       alignItems={"center"}
       height="5.063rem"
       sx={{
-        borderTop: "1px solid" + grey[300],
+        borderTop: "1px solid" + theme.palette.neutral,
       }}
     >
       <Typography

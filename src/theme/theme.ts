@@ -18,14 +18,23 @@ const theme = createTheme({
     info: {
       main: "#4a4a4a",
     },
-    grey: {
-      100: "#ededed",
-    },
+    neutral: "#ededed",
     error: {
       main: red.A400,
     },
   },
   spacing: 16,
 });
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    neutral: string;
+  }
+
+  // allow configuration using `createTheme`
+  interface PaletteOptions {
+    neutral?: string;
+  }
+}
 
 export default theme;

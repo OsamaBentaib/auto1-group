@@ -1,13 +1,12 @@
 import { Box, Grid } from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
-import { grey } from "@mui/material/colors";
 import React from "react";
 import theme from "../../theme/theme";
 
 function LoadingCard() {
   return (
     <Box
-      sx={{ border: "1px solid" + grey[300] }}
+      sx={{ border: "1px solid" + theme.palette.neutral }}
       padding={theme.spacing(0.75)}
       marginBottom={theme.spacing(0.75)}
     >
@@ -15,7 +14,7 @@ function LoadingCard() {
         <Grid item xs={3}>
           <Box
             data-testid="image-placeholder"
-            sx={{ background: grey[200], height: "100%" }}
+            sx={{ background: theme.palette.neutral, height: "100%" }}
           />
         </Grid>
         <Grid item xs={9}>

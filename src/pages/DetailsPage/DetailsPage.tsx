@@ -56,7 +56,7 @@ function DetailsPage() {
 
   return (
     <>
-      <Box height="50vh" sx={{ background: grey[100] }} />
+      <Box height="50vh" sx={{ background: theme.palette.neutral }} />
       <Container>
         <Grid
           marginY={theme.spacing(0.75)}
@@ -90,7 +90,7 @@ function DetailsPage() {
               </Grid>
               <Grid item xs={12} md={4}>
                 <Box
-                  sx={{ border: "1px solid" + grey[300] }}
+                  sx={{ border: "1px solid" + theme.palette.neutral }}
                   padding={theme.spacing(1.5)}
                 >
                   <Typography variant="body1" gutterBottom>

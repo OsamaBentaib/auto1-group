@@ -14,7 +14,7 @@ const Menu = ({ children }: MenuProps) => (
   <Box
     sx={{
       width: "100%",
-      border: "1px solid " + grey[200],
+      border: "1px solid " + theme.palette.neutral,
       borderRadius: "3px",
       marginTop: theme.spacing(0.5),
       cursor: "pointer",
@@ -36,9 +36,9 @@ const MenuItem = ({ option, selected, onClickCallback }: MenuItemProps) => (
     onClick={onClickCallback}
     sx={{
       padding: theme.spacing(0.5),
-      borderBottom: "1px solid " + grey[200],
+      borderBottom: "1px solid " + theme.palette.neutral,
       "&:hover": {
-        ...(!selected && { background: grey[200] }),
+        ...(!selected && { background: theme.palette.neutral }),
       },
       ...(selected && {
         background: theme.palette.primary.main,
@@ -54,9 +54,9 @@ const SelectButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: grey["A700"],
   backgroundColor: "white",
   "&:hover": {
-    backgroundColor: grey[200],
+    backgroundColor: theme.palette.neutral,
   },
-  border: "1px solid" + grey[200],
+  border: "1px solid" + theme.palette.neutral,
   width: "100%",
   display: "flex",
   justifyContent: "space-between",

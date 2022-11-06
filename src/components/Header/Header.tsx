@@ -8,7 +8,7 @@ function Header() {
   return (
     <Box
       sx={{
-        borderBottom: "1px solid" + grey[300],
+        borderBottom: "1px solid" + theme.palette.neutral,
       }}
     >
       <Container>
