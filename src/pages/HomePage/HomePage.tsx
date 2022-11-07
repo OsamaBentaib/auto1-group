@@ -25,7 +25,7 @@ function HomePage() {
   return (
     <Container>
       <Box marginTop={theme.spacing(1.5)}>
-        <Grid container spacing={theme.spacing(1.7)} width="100%">
+        <Grid container spacing={theme.spacing(1.5)} width="100%">
           <Grid item xs={12} md={5}>
             <Sidebar onFilterCallback={onFilter} />
           </Grid>

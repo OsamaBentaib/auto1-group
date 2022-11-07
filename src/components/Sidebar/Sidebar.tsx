@@ -66,7 +66,7 @@ function Sidebar({ onFilterCallback }: Props) {
   return (
     <Box
       sx={{
-        padding: theme.spacing(2),
+        padding: theme.spacing(1.5),
         width: "100%",
         border: "1px solid" + theme.palette.neutral,
       }}
